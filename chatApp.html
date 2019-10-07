@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <title>chatApp!</title>
+  </head>
+  <body>
+      
+        
+         
+      <div class="container mt-2 mb-2">
+        <div class="row">
+          <div>
+              <ul class="list-inline">
+                <li class="list-inline-item"  id="logOut"><a href="" >logOut</a></li>
+                <li class="list-inline-item" id="SignIn"><a href="" >SignIn</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="row">
+          <h1>Chat Zone!!!</h1>
+        </div>
+        <div class="row" id='singInSection'>
+          <div class="col-12">
+              <h3>Sign In</h3>
+            <form action='' id='singIn'>
+              <input type="text" class="form-control mt-3" id='name' placeholder="Name or Nic name">
+              <input type="text" class="form-control mt-3" id='phoneNumber' placeholder="Valid Number">
+              <input type="text" class="form-control mt-3" id='SingInEmail' placeholder="Valid Email">
+              <input type="text" class="form-control mt-3" id='SingInPassword' placeholder="Password">
+              <button type='submit' class="btn btn-primary mt-3">Register</button>
+            </form>
+          </div>
+        </div>
+        <div class="row" id="LoggedInSection">
+            <div class="col-12">
+              <h3>Log In</h3>
+                <form action="" id="LoggedIn">
+                <input type="text" class="form-control mt-3" id='LogInEmail' placeholder="Valid Email">
+                <input type="text" class="form-control mt-3" id='LogInPassword' placeholder="Password">
+                <button type='submit' class="btn btn-primary mt-3">Lest's Chat</button>
+              </form>
+            </div>
+          </div>
+          <div class="row" id='chatSection'>
+            <div class="container">
+              <div class="row">
+                <div id='userDtails'></div>
+              </div>
+              <div class="row">
+                  <h5 class="text-primary">chats</h5>
+              </div>
+              <div>
+              <div class="row " style="height:300px;overflow-y: scroll;background:rgba(12, 11, 116, 0.041);">
+                <ul id="ulist" class="list-group ml-5" ></ul>
+              </div>
+              <div class="row mt-3">
+                <form action="" id='chatInput'>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id='message'>
+                    <span class="input-group-btn">
+                          <button class="btn btn-primary" type="submit">Send</button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+            // you should connect your firestore databse hear.....
+          };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true });
+
+    </script>
+    <script src=chatAppAuth.js></script>
+    <script src=chatApp.js></script>
+  </body>
+</html>
