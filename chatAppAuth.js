@@ -12,7 +12,6 @@ auth.onAuthStateChanged(user =>{
 })
 
 //sign up user
-
 document.querySelector("#singIn").addEventListener('submit',(e)=>{
     e.preventDefault();
     
