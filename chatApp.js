@@ -70,7 +70,6 @@ function displayfireStoreData(user){
     }
   }
 
-
 //send Message
 var form=document.querySelector('#chatInput');
 form.addEventListener("submit",(e)=>{
